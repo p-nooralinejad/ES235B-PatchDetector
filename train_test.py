@@ -8,6 +8,7 @@ def train(model, train_loader, criterion, optimizer, device):
     correct = 0
     total = 0
     for images, labels in train_loader:
+        
         images, labels = images.to(device), labels.to(device)
 
         optimizer.zero_grad()

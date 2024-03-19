@@ -18,12 +18,12 @@ def get_cifar10_dataloader(batch_size=64, dataset_path='./data'):
 
 def get_caltech101_dataloader(batch_size=64, dataset_path='./data'):
     transform = transforms.Compose([
-        transforms.Resize((224, 224)),
+        transforms.RandomResizedCrop(224),
         transforms.ToTensor(),
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
-    train_dataset = Caltech101(root=dataset_path, download=True, transform=transform)
-    test_dataset = Caltech101(root=dataset_path, download=True, transform=transform)
+    train_dataset = Caltech101(root=dataset_path, download=True, transform=transform, target_type='category')
+    test_dataset = Caltech101(root=dataset_path, download=True, transform=transform , target_type='category')
 
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)

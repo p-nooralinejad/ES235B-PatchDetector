@@ -18,9 +18,9 @@ def save_checkpoint(state, is_best, filename='checkpoint.pth.tar'):
 
 def main():
     parser = argparse.ArgumentParser(description='PyTorch CIFAR-10/Caltech-101 Training')
-    parser.add_argument('--model', default='resnet18', choices=['resnet18', 'resnet20'], help='Model architecture')
+    parser.add_argument('--model', default='resnet20', choices=['resnet18', 'resnet20'], help='Model architecture')
     parser.add_argument('--dataset', default='cifar10', choices=['cifar10', 'caltech101'], help='Dataset')
-    parser.add_argument('--batch_size', type=int, default=64, help='Batch size')
+    parser.add_argument('--batch_size', type=int, default=256, help='Batch size')
     parser.add_argument('--epochs', type=int, default=10, help='Number of epochs')
     parser.add_argument('--lr', type=float, default=0.001, help='Learning rate')
     parser.add_argument('--checkpoint_path', type=str, default='saved_models', help='Path to save checkpoints')

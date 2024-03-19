@@ -1,6 +1,6 @@
-# PyTorch ResNet Models for CIFAR-10 and Caltech-101
+# PyTorch ResNet Models for CIFAR-10 
 
-This repository contains PyTorch implementations of ResNet-18 and ResNet-20 architectures for image classification on CIFAR-10 and Caltech-101 datasets. It also provides training and testing scripts along with a convenient interface to select models, datasets, and other hyperparameters.
+This repository contains PyTorch implementations of ResNet-18 and ResNet-20 architectures for image classification on CIFAR-10 dataset. It also provides training and testing scripts along with a convenient interface to select models, datasets, and other hyperparameters.
 
 ## Installation
 Install the required dependencies:

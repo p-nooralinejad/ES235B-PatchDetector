@@ -74,6 +74,7 @@ def main():
 
     if args.model == 'resnet18':
         model = ResNet18(num_classes=num_classes).to(device)
+        
     else:
         model = ResNet20(num_classes=num_classes).to(device)
     
@@ -86,6 +87,8 @@ def main():
         dictionary.pop('linear.bias')
     
     model.load_state_dict(dictionary)
+    if args.model == 'resnet18':
+        model = model.resnet18
 
     num_ftrs = model.fc.in_features
     for p in model.parameters():
@@ -139,7 +142,7 @@ def main():
         acc = test(model, test_loader)
         print(acc)
         if acc > best_accuracy:
-            best_model_state = model.state_dict
+            best_model_state = model.state_dict()
 
     torch.save(best_model_state, 'best_detector.pt')
 
